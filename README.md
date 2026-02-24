@@ -252,5 +252,5 @@ php artisan test --filter ProductTest
 
 ## routes
 
-/ (shop link)
-/admin (dashboard)
+/ [shop link] (https://highbase.abanoubsamir.com)
+/admin [dashboard] (https://highbase.abanoubsamir.com/admin/products)
