@@ -10,9 +10,8 @@ A Laravel-based e-commerce platform with a dynamic, hierarchical product categor
 2. [Installation](#installation)
 3. [Database Structure](#database-structure)
 4. [System Architecture](#system-architecture)
-5. [How Requirements Are Achieved](#how-requirements-are-achieved)
-6. [Feature Tests](#feature-tests)
-7. [routs](#routes)
+5. [Feature Tests](#feature-tests)
+6. [routs](#routes)
 
 ---
 
@@ -225,21 +224,6 @@ When a user selects a category on the product creation/edit form:
 
 ---
 
-## How Requirements Are Achieved
-
-| Requirement | Implementation |
-|---|---|
-| Products belong to categories | `products.category_id` FK → `categories` |
-| Hierarchical sub-categories | `categories.parent_id` self-referencing FK |
-| Category attributes | `category_attributes` table with `is_required` flag |
-| Required attributes on product form | API endpoint + JS renders fields dynamically |
-| Server-side required attribute validation | `withValidator()` in `StoreProductRequest` |
-| Inherited attributes from parent categories | `Category::getAllRequiredAttributes()` recursion |
-| Admin can add/edit/remove attributes | `Admin\CategoryAttributeController` CRUD |
-| Admin can mark attributes as required | `is_required` column toggled via admin UI |
-| Select dropdown attributes with options | `type = 'select'` + `options` JSON column |
-
----
 
 ## Feature Tests
 
